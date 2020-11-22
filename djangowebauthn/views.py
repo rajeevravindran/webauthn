@@ -59,7 +59,7 @@ def verify_register_webauthn_user(request):
     except Exception as e:
         return JsonResponse({
             "error": f"Registration failed due to {e}"
-        }, status=522)
+        }, status=400)
     django_user = User()
     username = request.session["username"]
     user_display_name = request.session["user_display_name"]
@@ -129,7 +129,7 @@ def login_webauthn_user_assertion_verify(request):
         signature_counter = generated_webauthn_user_assertion_response.verify()
     except Exception as e:
         traceback.print_exc()
-        return JsonResponse({"error" : f"Login assertion failed due to {e}"}, status=522)
+        return JsonResponse({"error" : f"Login assertion failed due to {e}"}, status=400)
     webauthn_user.signature_counter = signature_counter
     webauthn_user.save()
     return JsonResponse(webauthn_user.hackyDict())
