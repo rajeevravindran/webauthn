@@ -1,0 +1,8 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../../../../:\rit\courses\Fall20\CSEC.604.02 - (ONLINE) Crypto & Authentication\term-project\code\termprojectwebauthn\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
